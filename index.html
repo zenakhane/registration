@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="registration_number.css">
+    <title>Document</title>
+</head>
+<div class="head">
+    <label for="Heading">Registration Numbers</label>
+</div>
+
+<body>
+    <div class="regBox">
+        <label for="reg">Enter registration number here:</label>
+        <input type="text" id="regNumber" name="registration" class="registration">
+        <button class="addBtn">Add</button>
+    </div>
+    <div class="regbuttons">
+        <input type="radio" id="CapeTown" name="reg" value="Cape_Town">
+        <label for="reg">Cape Town</label>
+        <input type="radio" id="Bellville" name="reg" value="Bellville">
+        <label for="reg">Bellville</label>
+        <input type="radio" id="Stellenbosch" name="reg" value="Stellenbosch">
+        <label for="reg">Stellenbosch</label>
+        <input type="radio" id="Show" name="reg" value="Show">
+        <label for="reg">Show All</label>
+    </div>
+
+    <ul id="myList">
+    </ul>
+
+</body>
+<script src="regNumber_logic.js"></script>
+<script src="registration_number.js"></script>
+
+</html>
