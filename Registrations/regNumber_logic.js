@@ -37,14 +37,6 @@ function RegNumber() {
         return registrationDisplay
     }
 
-    function regErrors(register) {
-        if (register === " ") {
-            return "Please enter a registration"
-        } else {
-            return "Please select a town to display"
-        }
-    }
-
     return {
         displayRegistrations,
         setRegDisplay,

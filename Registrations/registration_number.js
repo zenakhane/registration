@@ -5,7 +5,7 @@ var stellieElement = document.querySelector(".Stellenbosch");
 var reg = document.querySelector(".registration");
 var addButton = document.querySelector(".addBtn");
 var showButtonElem = document.querySelector(".Show")
-var error = document.querySelector(".error");
+var error = document.querySelector(".errors");
 var registrationBtn = document.querySelector("input[name='reg']:checked");
 var displayButton = document.querySelector(".display")
 
@@ -49,7 +49,16 @@ function registrationNum() {
     registrations.displayRegistrations()
     if (registrations.setRegNumbers(reg.value)) {
         localStorage.setItem('registrations', JSON.stringify(registrations.getRegDisplay()))
+    } else if (reg.value == '') {
+        error.innerHTML = "Please enter a registration"
+    } else {
+        error.innerHTML = "Select a town "
     }
+    reg.value = ''
+    setTimeout(function() {
+        error.innerHTML = ''
+    }, 3000)
+
 }
 
 function regiButtons() {
