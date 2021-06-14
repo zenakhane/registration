@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="registration_number.css">
+    <link rel="stylesheet" href="./Registrations/registration_number.css">
     <title>Document</title>
 </head>
 <div class="head">
@@ -19,21 +19,29 @@
         <button class="addBtn">Add</button>
     </div>
     <div class="regbuttons">
-        <input type="radio" id="CapeTown" name="reg" value="Cape_Town">
+        <input type="radio" id="CapeTown" name="reg" value="CA">
         <label for="reg">Cape Town</label>
-        <input type="radio" id="Bellville" name="reg" value="Bellville">
+        <input type="radio" id="Bellville" name="reg" value="CY">
         <label for="reg">Bellville</label>
-        <input type="radio" id="Stellenbosch" name="reg" value="Stellenbosch">
+        <input type="radio" id="Stellenbosch" name="reg" value="CL">
         <label for="reg">Stellenbosch</label>
-        <input type="radio" id="Show" name="reg" value="Show">
-        <label for="reg">Show All</label>
+        <input type="radio" id="Show" name="reg" value="">
+        <label for="showButton">Show All</label>
+
+    </div>
+    <div class="dispBttn">
+        <button class="display">Display</button>
     </div>
 
     <ul id="myList">
     </ul>
 
+    <div class="errors">
+
+    </div>
+
 </body>
-<script src="regNumber_logic.js"></script>
-<script src="registration_number.js"></script>
+<script src="./Registrations/regNumber_logic.js"></script>
+<script src="./Registrations/registration_number.js"></script>
 
 </html>
