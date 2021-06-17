@@ -29,11 +29,8 @@ function displayFunction(registraNumber) {
         list.appendChild(regList);
         document.getElementById("myList").appendChild(list);
     }
-    if (reg.value == '') {
-        error.innerHTML = "Please enter  registration!"
-    } else if (reg.value == 'rdftghb') {
-        error.innerHTML = "Please enter a valid registration!"
-    }
+
+    error.innerHTML = registrations.regErrors()
     reg.value = ''
     setTimeout(function() {
         error.innerHTML = ''

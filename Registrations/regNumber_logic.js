@@ -35,12 +35,26 @@ function RegNumber() {
         return registrationDisplay
     }
 
+    function regErrors(townTag) {
+        if (regexTest.test) {
 
+
+            if (townTag == '') {
+                return "Please enter a registration!"
+            } else if (townTag == "sdxcfvg") {
+                return "Please enter a valid registration"
+
+            } else if (townTag == 1236549) {
+                return "Please enter registration location"
+            }
+        }
+    }
     return {
         displayRegistrations,
         setRegDisplay,
         getRegDisplay,
         setRegNumbers,
         getRegistrationDisplay,
+        regErrors
     }
 }
