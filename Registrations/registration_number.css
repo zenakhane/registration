@@ -46,4 +46,7 @@ ul {
     list-style: none;
 }
 
-p {}
+.errors {
+    font-style: italic;
+    color: chartreuse;
+}

@@ -25,14 +25,4 @@ describe('Errors', function() {
         assert.equal(display.regErrors(''), 'Please enter a registration!');
     });
 
-    it('Should return error if input is only characters', function() {
-        var display = RegNumber();
-        assert.equal(display.regErrors('sdxcfvg'), 'Please enter a valid registration');
-
-
-    });
-    it('Should return an error if input is only numbers', function() {
-        var display = RegNumber()
-        assert.equal(display.regErrors(1236549), 'Please enter registration location');
-    });
 });

@@ -17,6 +17,7 @@ var regDisplay = [];
 
 if (localStorage['registrations']) {
     regDisplay = JSON.parse(localStorage.getItem('registrations'))
+
 }
 displayFunction(regDisplay)
 registrations.setRegDisplay(regDisplay)
@@ -30,11 +31,6 @@ function displayFunction(registraNumber) {
         document.getElementById("myList").appendChild(list);
     }
 
-    error.innerHTML = registrations.regErrors()
-    reg.value = ''
-    setTimeout(function() {
-        error.innerHTML = ''
-    }, 3000)
 }
 
 
@@ -56,9 +52,18 @@ function filterFun() {
 function registrationNum() {
     registrations.displayRegistrations()
     if (registrations.setRegNumbers(reg.value)) {
+
         localStorage.setItem('registrations', JSON.stringify(registrations.getRegDisplay()))
+        displayFunction(registrations.getRegDisplay())
     }
+    error.innerHTML = registrations.regErrors(reg.value)
+
+    reg.value = ''
+    setTimeout(function() {
+        error.innerHTML = ''
+    }, 3000)
 }
+// error.innerHTML = registrations.regErrors()
 
 function regiButtons() {
     var registrationBtn = document.querySelector("input[name='reg']:checked");

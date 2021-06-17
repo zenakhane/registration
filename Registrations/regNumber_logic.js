@@ -2,7 +2,7 @@ function RegNumber() {
     var regDisplay = [];
     var regDisplayFilter = [];
     var registrationDisplay = 0;
-    var regexTest = /[A-Z]{2}\s[0-9]{3}\-[0-9]{3}/gm
+
 
     function displayRegistrations(townTag) {
         regDisplayFilter = [];
@@ -16,6 +16,7 @@ function RegNumber() {
     }
 
     function setRegNumbers(register) {
+        register = register.toUpperCase();
         if (!regDisplay.includes(register)) {
             registrationDisplay++;
             regDisplay.push(register);
@@ -24,10 +25,12 @@ function RegNumber() {
     }
 
     function getRegDisplay() {
+
         return regDisplay
     }
 
     function setRegDisplay(register) {
+        // register = register.charAt(0).toUpperCase() + register.slice(2);
         regDisplay = register;
     }
 
@@ -35,19 +38,18 @@ function RegNumber() {
         return registrationDisplay
     }
 
-    function regErrors(townTag) {
-        if (regexTest.test) {
+    function regErrors(registration) {
 
+        if (registration == '') {
+            return "Please enter a registration!"
 
-            if (townTag == '') {
-                return "Please enter a registration!"
-            } else if (townTag == "sdxcfvg") {
-                return "Please enter a valid registration"
-
-            } else if (townTag == 1236549) {
-                return "Please enter registration location"
-            }
         }
+        //     if (townTag == "sdxcfvg") {
+        //         return "Please enter a valid registration"
+
+        //     } else if (!townTag) {
+        //         return "Please enter registration location"
+        //     }
     }
     return {
         displayRegistrations,
