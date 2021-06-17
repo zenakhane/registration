@@ -1,9 +1,8 @@
 function RegNumber() {
-
     var regDisplay = [];
     var regDisplayFilter = [];
     var registrationDisplay = 0;
-    var regexTest = /[A-Z]{2}\s[0-9]{3}\-[0-9]{3}/$
+    var regexTest = /[A-Z]{2}\s[0-9]{3}\-[0-9]{3}/gm
 
     function displayRegistrations(townTag) {
         regDisplayFilter = [];
@@ -17,7 +16,6 @@ function RegNumber() {
     }
 
     function setRegNumbers(register) {
-        console.log(regexTest.test(register))
         if (!regDisplay.includes(register)) {
             registrationDisplay++;
             regDisplay.push(register);
@@ -37,13 +35,12 @@ function RegNumber() {
         return registrationDisplay
     }
 
+
     return {
         displayRegistrations,
         setRegDisplay,
         getRegDisplay,
         setRegNumbers,
         getRegistrationDisplay,
-        regErrors
-
     }
 }

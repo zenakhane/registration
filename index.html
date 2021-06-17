@@ -6,17 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Registrations/registration_number.css">
-    <title>Document</title>
+    <title>Registration webpage</title>
 </head>
 <div class="head">
     <label for="Heading">Registration Numbers</label>
 </div>
 
 <body>
+    <div class="errors">
+
+    </div>
     <div class="regBox">
         <label for="reg">Enter registration number here:</label>
         <input type="text" id="regNumber" name="registration" class="registration">
         <button class="addBtn">Add</button>
+    </div>
+    <div class="info">
+        <p class="reglist">
+            Accepted registration format:
+            <p>CA 123-598</p>
+            <p>CY 9875</p>
+            <p>CL ZENA</p>
+        </p>
+    </div>
     </div>
     <div class="regbuttons">
         <input type="radio" id="CapeTown" name="reg" value="CA">
@@ -36,12 +48,8 @@
     <ul id="myList">
     </ul>
 
-    <div class="errors">
-
-    </div>
-
 </body>
-<script src="/Registrations/regNumber_logic.js"></script>
-<script src="/Registrations/registration_number.js"></script>
+<script src="./Registrations/regNumber_logic.js"></script>
+<script src="./Registrations/registration_number.js"></script>
 
 </html>

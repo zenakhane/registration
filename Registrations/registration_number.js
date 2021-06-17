@@ -29,7 +29,19 @@ function displayFunction(registraNumber) {
         list.appendChild(regList);
         document.getElementById("myList").appendChild(list);
     }
+    if (reg.value == '') {
+        error.innerHTML = "Please enter  registration!"
+    } else if (reg.value == 'rdftghb') {
+        error.innerHTML = "Please enter a valid registration!"
+    }
+    reg.value = ''
+    setTimeout(function() {
+        error.innerHTML = ''
+    }, 3000)
 }
+
+
+
 
 function filterFun() {
     var registrationBtn = document.querySelector("input[name='reg']:checked");
@@ -39,26 +51,16 @@ function filterFun() {
         if (regiDisplay.length !== 0) {
             displayFunction(regiDisplay)
         } else {
-            document.getElementById("myList").innerHTML = "Nothing to display yet!!!!!!!!!!!!"
+            document.getElementById("myList").innerHTML = "Nothing to display yet!"
         }
     }
 }
 
 function registrationNum() {
-    console.log(reg.value)
     registrations.displayRegistrations()
     if (registrations.setRegNumbers(reg.value)) {
         localStorage.setItem('registrations', JSON.stringify(registrations.getRegDisplay()))
-    } else if (reg.value == '') {
-        error.innerHTML = "Please enter a registration"
-    } else {
-        error.innerHTML = "Select a town "
     }
-    reg.value = ''
-    setTimeout(function() {
-        error.innerHTML = ''
-    }, 3000)
-
 }
 
 function regiButtons() {
