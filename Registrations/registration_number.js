@@ -8,6 +8,7 @@ var showButtonElem = document.querySelector(".Show")
 var error = document.querySelector(".errors");
 var registrationBtn = document.querySelector("input[name='reg']:checked");
 var displayButton = document.querySelector(".display")
+var resetBttn = document.querySelector(".reset")
 
 
 var registrations = RegNumber();
@@ -33,9 +34,6 @@ function displayFunction(registraNumber) {
 
 }
 
-
-
-
 function filterFun() {
     var registrationBtn = document.querySelector("input[name='reg']:checked");
     if (registrationBtn) {
@@ -50,20 +48,30 @@ function filterFun() {
 }
 
 function registrationNum() {
-    registrations.displayRegistrations()
+    // registrations.displayRegistrations()
+    error.innerHTML = registrations.regErrors(reg.value)
     if (registrations.setRegNumbers(reg.value)) {
 
         localStorage.setItem('registrations', JSON.stringify(registrations.getRegDisplay()))
         displayFunction(registrations.getRegDisplay())
     }
-    error.innerHTML = registrations.regErrors(reg.value)
 
     reg.value = ''
     setTimeout(function() {
         error.innerHTML = ''
     }, 3000)
 }
-// error.innerHTML = registrations.regErrors()
+resetBttn.addEventListener('click', function() {
+
+    error.innerHTML = 'Counter reset!'
+
+    setTimeout(function() {
+        localStorage.clear()
+        location.reload()
+    }, 3000)
+
+
+})
 
 function regiButtons() {
     var registrationBtn = document.querySelector("input[name='reg']:checked");

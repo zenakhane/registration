@@ -10,7 +10,6 @@ describe('RegNumber', function() {
         display.setRegNumbers('CY 156-987')
         assert.equal(display.displayRegistrations('CY 156-987'), 'CY 156-987');
 
-
     });
     it('Should display a registration from Stellenbosch', function() {
         var display = RegNumber()

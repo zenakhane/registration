@@ -42,14 +42,9 @@ function RegNumber() {
 
         if (registration == '') {
             return "Please enter a registration!"
-
+        } else {
+            return ''
         }
-        //     if (townTag == "sdxcfvg") {
-        //         return "Please enter a valid registration"
-
-        //     } else if (!townTag) {
-        //         return "Please enter registration location"
-        //     }
     }
     return {
         displayRegistrations,
